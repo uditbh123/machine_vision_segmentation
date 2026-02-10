@@ -2,18 +2,15 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 
-# --- PARAMETERS ---
-# 1. Image Filename (Change this to your real image)
+
+# 1. Loading to Image 
 FILENAME = 'images/WIN_20260202_10_31_38_Pro.jpg'
 
 # 2. Threshold Value
-# Real images are darker. If the background turns white in the binary mask, 
-# LOWER this value (try 100 or 120).
 THRESH_VAL = 100 
 
 # 3. Minimum Area Filter
-# Any object smaller than this (in pixels) will be ignored.
-# This removes small specks of dust/noise.
+
 MIN_AREA = 1000 
 
 # --- PIPELINE ---
