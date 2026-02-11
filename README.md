@@ -75,8 +75,31 @@ analyze_image('images/my_real_photo.jpg', min_area=1000, use_adaptive=True)
 ```
 
 ## 📊 Results
-The pipeline successfully detects:
+## 📊 Results
 
-- Simulated Objects: 5/5 geometric shapes.
+The pipeline successfully robustly detects objects in both simulated and challenging real-world environments.
 
-- Real Objects: 7/7 mosaic tiles (including low-contrast white/yellow tiles).
+### 1. Simulated Image (RoboDK)
+* **Result:** 5/5 geometric shapes detected.
+* **Performance:** Perfect detection due to high contrast and even lighting.
+
+### 2. Real Image (Camera Capture)
+* **Result:** 7/7 mosaic tiles detected.
+* **Challenge:** Low-contrast white/yellow tiles on white paper were initially undetected or split into multiple pieces ("hollow object" effect).
+* **Solution:** Applied **Heavy Gaussian Blur (15x15)** before thresholding. This smoothed the internal gradients of the tiles, allowing Adaptive Thresholding to see them as solid objects rather than broken outlines.
+* **Noise Handling:** Background noise (shadows/dust) was effectively removed using a dynamic **Area Filter** (min 0.1% of image size).
+
+### Screenshots
+
+Fig 1: Detection on RoboDK simulated image.*
+
+![Simulated RoboDK Image](images/simulated_objects_result.png)
+
+*Fig 2: Detection on real camera image showing 7 detected tiles.*
+
+![Real World Result](images/real_result_7_objects.png)
+
+*Fig 3: Detection on real camera image showing 16 detected tiles*
+
+![Real world Result](images/16_objects_result.png)
+

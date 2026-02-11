@@ -87,7 +87,7 @@ def analyze_image(filename):
 # --- MAIN BLOCK ---
 if __name__ == "__main__":
     # 1. Test Real Image
-    analyze_image('images/7ojects.jpg')
+    analyze_image('images/manyobjects.jpg')
     
     # 2. Test Simulated Image
     analyze_image('images/image_2.png')
