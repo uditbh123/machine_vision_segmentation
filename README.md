@@ -55,7 +55,7 @@ pip install opencv-python matplotlib numpy
 ## How to Run
 1. Clone the repository:
 ```
-git clone [https://github.com/YOUR_USERNAME/machine-vision-segmentation.git](https://github.com/YOUR_USERNAME/machine-vision-segmentation.git)
+git clone [https://github.com/uditbh123/machine-vision-segmentation.git](https://github.com/uditbh123/machine-vision-segmentation.git)
 cd machine-vision-segmentation
 ```
 
@@ -74,7 +74,6 @@ analyze_image('images/my_real_photo.jpg', min_area=1000, use_adaptive=True)
 # analyze_image('images/image_2.jpg', min_area=100, use_adaptive=False, global_thresh=200)
 ```
 
-## 📊 Results
 ## 📊 Results
 
 The pipeline successfully robustly detects objects in both simulated and challenging real-world environments.
